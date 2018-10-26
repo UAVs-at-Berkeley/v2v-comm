@@ -1,4 +1,5 @@
 import socket
+import time
 from consts import *
 
 def send(ip="192.168.1.6", port=5005):
@@ -11,7 +12,8 @@ def send(ip="192.168.1.6", port=5005):
     # TODO: Remove this later:
     counter = 5
     while counter >= 0:
-        print(counter)
+        print("Sending message ", MESSAGE)
         sock.sendto(MESSAGE, (UDP_IP, UDP_PORT))
+        time.sleep(1)
         counter -= 1
 
